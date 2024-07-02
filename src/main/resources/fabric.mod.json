@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "yetanotherinstrumentmod",
+	"version": "0.0.1",
+	"name": "YetAnotherInstrumentMod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"FifthTundraG"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "GNU-GPLv3",
+	"icon": "assets/yetanotherinstrumentmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"fifthtundrag.yetanotherinstrumentmod.InstrumentMod"
+		],
+		"client": [
+			"fifthtundrag.yetanotherinstrumentmod.InstrumentModClient"
+		]
+	},
+	"mixins": [
+		"yetanotherinstrumentmod.mixins.json",
+		{
+			"config": "yetanotherinstrumentmod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
