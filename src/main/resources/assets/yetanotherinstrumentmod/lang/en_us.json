@@ -1,4 +1,6 @@
 {
   "item.yetanotherinstrumentmod.saxophone": "Saxophone",
-  "itemGroup.yetanotherinstrumentmod.instruments": "Instruments"
+  "item.yetanotherinstrumentmod.tuba": "Tuba",
+  "itemGroup.yetanotherinstrumentmod.instruments": "Instruments",
+  "item.yetanotherinstrumentmod.clarinet": "Clarinet"
 }

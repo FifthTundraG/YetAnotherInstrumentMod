@@ -1,5 +1,8 @@
 package fifthtundrag.yetanotherinstrumentmod;
 
+import fifthtundrag.yetanotherinstrumentmod.item.ClarinetItem;
+import fifthtundrag.yetanotherinstrumentmod.item.TubaItem;
+import fifthtundrag.yetanotherinstrumentmod.util.CustomSounds;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -23,14 +26,22 @@ public class InstrumentMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("YetAnotherInstrumentMod");
 
+	public static final Item.Settings genericInstrumentSettings = new Item.Settings().rarity(Rarity.EPIC).maxCount(1);
+
 	public static final Item SAXOPHONE_ITEM = Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "saxophone"),
-			new SaxophoneItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)));
+			new SaxophoneItem(genericInstrumentSettings));
+	public static final Item TUBA_ITEM = Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "tuba"),
+			new TubaItem(genericInstrumentSettings));
+	public static final Item CLARINET_ITEM = Registry.register(Registries.ITEM, Identifier.of(MOD_ID, "clarinet"),
+			new ClarinetItem(genericInstrumentSettings));
 
 	private static final ItemGroup INSTRUMENTS_GROUP = FabricItemGroup.builder()
 			.icon(() -> new ItemStack(SAXOPHONE_ITEM))
 			.displayName(Text.translatable("itemGroup.yetanotherinstrumentmod.instruments"))
 			.entries((context, entries) -> {
 				entries.add(SAXOPHONE_ITEM);
+				entries.add(TUBA_ITEM);
+				entries.add(CLARINET_ITEM);
 			})
 			.build();
 
@@ -41,5 +52,7 @@ public class InstrumentMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		Registry.register(Registries.ITEM_GROUP, Identifier.of(MOD_ID, "instruments_group"), INSTRUMENTS_GROUP);
+
+		CustomSounds.initialize();
 	}
 }
