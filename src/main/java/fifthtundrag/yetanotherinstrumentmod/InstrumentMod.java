@@ -2,6 +2,7 @@ package fifthtundrag.yetanotherinstrumentmod;
 
 import fifthtundrag.yetanotherinstrumentmod.registry.ModItemGroup;
 import fifthtundrag.yetanotherinstrumentmod.registry.ModItems;
+import fifthtundrag.yetanotherinstrumentmod.registry.ModSoundEvents;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -23,5 +24,6 @@ public class InstrumentMod implements ModInitializer {
 		// register stuff
 		ModItems.init();
 		ModItemGroup.init();
+		ModSoundEvents.init();
 	}
 }

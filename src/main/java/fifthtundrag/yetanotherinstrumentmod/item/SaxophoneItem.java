@@ -1,9 +1,9 @@
 package fifthtundrag.yetanotherinstrumentmod.item;
 
-import fifthtundrag.yetanotherinstrumentmod.util.CustomSounds;
+import fifthtundrag.yetanotherinstrumentmod.registry.ModSoundEvents;
 
 public class SaxophoneItem extends InstrumentItem {
     public SaxophoneItem(Settings settings) {
-        super(CustomSounds.SAXOPHONE_PLAY,1F, settings);
+        super(ModSoundEvents.SAXOPHONE_PLAY,1F, settings);
     }
 }
