@@ -1,0 +1,14 @@
+{
+  "tuba_play": {
+    "subtitle": "sound.yetanotherinstrumentmod.tuba_play",
+    "sounds": ["yetanotherinstrumentmod:tuba_play"]
+  },
+  "saxophone_play": {
+    "subtitle": "sound.yetanotherinstrumentmod.saxophone_play",
+    "sounds": ["yetanotherinstrumentmod:saxophone_play"]
+  },
+  "clarinet_play": {
+    "subtitle": "sound.yetanotherinstrumentmod.clarinet_play",
+    "sounds": ["yetanotherinstrumentmod:clarinet_play"]
+  }
+}
