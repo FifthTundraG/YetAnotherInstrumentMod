@@ -1,7 +1,6 @@
 package fifthtundrag.yetanotherinstrumentmod.registry;
 
 import fifthtundrag.yetanotherinstrumentmod.InstrumentMod;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
@@ -12,11 +11,12 @@ import java.util.Map;
 
 @SuppressWarnings("unused")
 public class ModSoundEvents {
+    /** Stores all of our {@link SoundEvent}s to be registered to our registry when {@link ModSoundEvents#init} is run */
     private static final Map<Identifier, SoundEvent> SOUND_EVENTS = new LinkedHashMap<>();
 
-    public static final SoundEvent TUBA_PLAY = register("tuba_play");
-    public static final SoundEvent SAXOPHONE_PLAY = register("saxophone_play");
-    public static final SoundEvent CLARINET_PLAY = register("clarinet_play");
+    public static final SoundEvent TUBA_PLAY = register("item.tuba.play");
+    public static final SoundEvent SAXOPHONE_PLAY = register("item.saxophone.play");
+    public static final SoundEvent CLARINET_PLAY = register("item.clarinet.play");
 
     private static SoundEvent register(String path) {
         final Identifier identifier = Identifier.of(InstrumentMod.MOD_ID, path);

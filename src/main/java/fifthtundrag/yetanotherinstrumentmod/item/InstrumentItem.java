@@ -1,6 +1,5 @@
 package fifthtundrag.yetanotherinstrumentmod.item;
 
-import fifthtundrag.yetanotherinstrumentmod.InstrumentMod;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,9 +19,7 @@ public class InstrumentItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-//        user.playSound(SoundEvents.BLOCK_NOTE_BLOCK_HARP.value(), 5.0F, this.pitch);
         user.playSound(this.sound, 1.0F, this.pitch);
-        InstrumentMod.LOGGER.info("playing {}", this.sound.toString());
         return TypedActionResult.success(user.getStackInHand(hand));
     }
 }
