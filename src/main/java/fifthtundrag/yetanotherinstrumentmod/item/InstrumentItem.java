@@ -9,17 +9,17 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class InstrumentItem extends Item {
-    private final float pitch;
     private final SoundEvent sound;
-    public InstrumentItem(SoundEvent sound, float pitch, Settings settings) {
+    public InstrumentItem(Settings settings, SoundEvent sound) {
         super(settings);
-        this.pitch = pitch;
         this.sound = sound;
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        user.playSound(this.sound, 1.0F, this.pitch);
+        // rotation vector is between -1 and 1, pitch is between 0.5 and 2
+        final float pitch = (0.75f * (float) user.getRotationVector().y) + 1.25f;
+        user.playSound(this.sound, 1.0F, pitch);
         return TypedActionResult.success(user.getStackInHand(hand));
     }
 }
