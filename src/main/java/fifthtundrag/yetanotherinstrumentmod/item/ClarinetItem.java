@@ -3,7 +3,7 @@ package fifthtundrag.yetanotherinstrumentmod.item;
 import fifthtundrag.yetanotherinstrumentmod.registry.ModSoundEvents;
 
 public class ClarinetItem extends InstrumentItem {
-    public ClarinetItem(Settings settings) {
-        super(settings, ModSoundEvents.CLARINET_PLAY);
+    public ClarinetItem(Properties properties) {
+        super(properties, ModSoundEvents.CLARINET_PLAY);
     }
 }
